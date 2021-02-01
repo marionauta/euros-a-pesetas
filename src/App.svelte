@@ -48,17 +48,23 @@
 	    grid-template-columns: 1fr;
 	  }
 
-	  .currency-title {
+	  .currency-title, .currency-input {
 	    text-align: center;
 	  }
+	}
+
+	.repo {
+		display: block;
+		color: lightcoral;
+		font: 12px monospace;
+		text-align: center;
+		text-decoration: none;
 	}
 </style>
 
 <div class=app>
 	<div class=container>
-		<span class=currency-title>
-			Euros
-		</span>
+		<span class=currency-title>Euros</span>
 		<input
 			class=currency-input
 			type=number
@@ -66,9 +72,7 @@
 			on:input={onChangeEuros}
 		>
 
-		<span class=currency-title>
-			Pesetas
-		</span>
+		<span class=currency-title>Pesetas</span>
 		<input
 			class=currency-input
 			type=number
@@ -77,3 +81,7 @@
 		>
 	</div> <!-- .container -->
 </div> <!-- .app -->
+
+<a class=repo href=https://github.com/marionauta/euros-a-pesetas target=_blank>
+	código de la app
+</a>
