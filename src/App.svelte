@@ -64,16 +64,18 @@
 
 <div class=app>
 	<div class=container>
-		<span class=currency-title>Euros</span>
+		<label for=euro-input class=currency-title>Euros</label>
 		<input
+			id=euro-input
 			class=currency-input
 			type=number
 			bind:value={euros}
 			on:input={onChangeEuros}
 		>
 
-		<span class=currency-title>Pesetas</span>
+		<label for=peseta-input class=currency-title>Pesetas</label>
 		<input
+			id=peseta-input
 			class=currency-input
 			type=number
 			bind:value={pesetas}
@@ -82,6 +84,6 @@
 	</div> <!-- .container -->
 </div> <!-- .app -->
 
-<a class=repo href=https://github.com/marionauta/euros-a-pesetas target=_blank>
+<a class=repo href=https://github.com/marionauta/euros-a-pesetas target=_blank rel=noopener>
 	código de la app
 </a>
