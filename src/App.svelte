@@ -55,7 +55,7 @@
 
 	.repo {
 		display: block;
-		color: lightcoral;
+		color: #f08080;
 		font: 12px monospace;
 		text-align: center;
 		text-decoration: none;
