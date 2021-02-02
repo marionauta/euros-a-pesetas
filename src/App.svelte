@@ -105,6 +105,7 @@
 </div> <!-- .app -->
 
 <div class=attribution>
+	<div class=ratio>1 euro = {ratio} pesetas</div>
 	<a href={creator.repo} target=_blank rel=noopener>código de la app</a> #
 	<a href={creator.link} target=_blank rel=noopener>creado por {creator.name}</a>
 </div>
