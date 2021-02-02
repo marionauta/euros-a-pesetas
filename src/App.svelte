@@ -1,4 +1,10 @@
 <script>
+	const creator = {
+		name: 'Mario Nachbaur',
+		link: 'https://mario.nachbaur.dev',
+		repo: 'https://github.com/marionauta/euros-a-pesetas',
+	};
+
 	const ratio = 166.386;
 	const formatter = Intl.NumberFormat('default', {
 		minimumFractionDigits: 2,
@@ -19,7 +25,7 @@
 
 	function onChangePesetas() {
 		const value = pesetas.length ? cleanInput(pesetas) : 0;
-	  	euros = value ? formatter.format(value / ratio) : '';
+		euros = value ? formatter.format(value / ratio) : '';
 	}
 </script>
 
@@ -63,11 +69,15 @@
 	  }
 	}
 
-	.repo {
+	.attribution {
 		display: block;
-		color: #f08080;
 		font: 12px monospace;
 		text-align: center;
+		text-decoration: none;
+	}
+
+	.attribution a {
+		color: #f08080;
 		text-decoration: none;
 	}
 </style>
@@ -94,6 +104,7 @@
 	</div> <!-- .container -->
 </div> <!-- .app -->
 
-<a class=repo href=https://github.com/marionauta/euros-a-pesetas target=_blank rel=noopener>
-	código de la app
-</a>
+<div class=attribution>
+	<a href={creator.repo} target=_blank rel=noopener>código de la app</a> #
+	<a href={creator.link} target=_blank rel=noopener>creado por {creator.name}</a>
+</div>
