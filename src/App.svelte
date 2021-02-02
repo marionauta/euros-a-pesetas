@@ -89,6 +89,7 @@
 			id=euro-input
 			class=currency-input
 			placeholder=0
+			inputmode=decimal
 			bind:value={euros}
 			on:input={onChangeEuros}
 		>
@@ -98,6 +99,7 @@
 			id=peseta-input
 			class=currency-input
 			placeholder=0
+			inputmode=decimal
 			bind:value={pesetas}
 			on:input={onChangePesetas}
 		>
