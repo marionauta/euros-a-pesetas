@@ -1,15 +1,25 @@
 <script>
 	const ratio = 166.386;
+	const formatter = Intl.NumberFormat('default', {
+		minimumFractionDigits: 2,
+		maximumFractionDigits: 2,
+	});
 
-	let euros = 0;
-	let pesetas = 0;
+	let euros = '';
+	let pesetas = '';
+
+	function cleanInput(input) {
+		return parseFloat(input.replaceAll('.', '').replaceAll(',', '.'), 10);
+	}
 
 	function onChangeEuros() {
-	  pesetas = (euros * ratio).toFixed(2);
+		const value = euros.length ? cleanInput(euros) : 0;
+		pesetas = value ? formatter.format(value * ratio) : '';
 	}
 
 	function onChangePesetas() {
-	  euros = (pesetas / ratio).toFixed(2);
+		const value = pesetas.length ? cleanInput(pesetas) : 0;
+	  	euros = value ? formatter.format(value / ratio) : '';
 	}
 </script>
 
@@ -68,7 +78,7 @@
 		<input
 			id=euro-input
 			class=currency-input
-			type=number
+			placeholder=0
 			bind:value={euros}
 			on:input={onChangeEuros}
 		>
@@ -77,7 +87,7 @@
 		<input
 			id=peseta-input
 			class=currency-input
-			type=number
+			placeholder=0
 			bind:value={pesetas}
 			on:input={onChangePesetas}
 		>
