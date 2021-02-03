@@ -1,0 +1,21 @@
+:root {
+    --color-accent: #f08080;
+    --color-background: #fff;
+    --color-foreground: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-foreground: #fff;
+        --color-background: #000;
+    }
+}
+
+body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

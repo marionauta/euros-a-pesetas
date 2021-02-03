@@ -31,53 +31,61 @@
 
 <style>
 	.app {
-	  margin: 1rem;
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  height: 90vh;
-	  font: 40px sans-serif;
+		margin: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-grow: 1;
+		font: 40px sans-serif;
 	}
 
 	.container {
-	  display: grid;
-	  grid-template-columns: 2fr 3fr;
-	  align-items: center;
-	  grid-gap: 1rem;
-	  width: 100%;
-	  max-width: 800px;
+		display: grid;
+		grid-template-columns: 2fr 3fr;
+		align-items: center;
+		grid-gap: 1rem;
+		width: 100%;
+		max-width: 800px;
 	}
 
 	.currency-title {
-	  text-align: right;
+		text-align: right;
 	}
 
 	.currency-input {
-	  font: inherit;
-	  padding: 0.5rem;
-	  width: 100%;
-	  box-sizing: border-box;
+		font: inherit;
+		width: 100%;
+		padding: .5rem 1rem;
+		box-sizing: border-box;
+		background: var(--color-background);
+		border: 2px solid var(--color-foreground);
+		border-radius: .25rem;
+		color: var(--color-foreground);
+		outline: none;
+	}
+
+	.currency-input:focus {
+		border-color: var(--color-accent);
 	}
 
 	@media (max-width: 600px) {
-	  .container {
-	    grid-template-columns: 1fr;
-	  }
+		.container {
+			grid-template-columns: 1fr;
+		}
 
-	  .currency-title, .currency-input {
-	    text-align: center;
-	  }
+		.currency-title, .currency-input {
+			text-align: center;
+		}
 	}
 
-	.attribution {
-		display: block;
-		font: 12px monospace;
+	.footer {
+		margin: 1rem;
+		font: 14px monospace;
 		text-align: center;
-		text-decoration: none;
 	}
 
-	.attribution a {
-		color: #f08080;
+	.footer a {
+		color: var(--color-accent);
 		text-decoration: none;
 	}
 </style>
@@ -106,8 +114,8 @@
 	</div> <!-- .container -->
 </div> <!-- .app -->
 
-<div class=attribution>
-	<div class=ratio>1 euro = {ratio} pesetas</div>
-	<a href={creator.repo} target=_blank rel=noopener>código de la app</a> #
-	<a href={creator.link} target=_blank rel=noopener>creado por {creator.name}</a>
+<div class=footer>
+	<div class=ratio>1 euro = 166,386 pesetas</div>
+	<a href={creator.repo} target=_blank rel=noopener>código de la app</a> ·
+	<a href={creator.link} target=_blank rel=noopener>{creator.name}</a>
 </div>
